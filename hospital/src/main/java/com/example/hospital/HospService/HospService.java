@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 import com.example.hospital.HospModel.HospModel;
 import com.example.hospital.HospRepo.HospRepo;
 @Service
