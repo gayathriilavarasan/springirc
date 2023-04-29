@@ -1,8 +1,12 @@
 package com.example.hospital.HospService;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -33,8 +37,51 @@ public class HospService {
 		// TODO Auto-generated method stub
 		hrepo.deleteById(id);
 	}
-	
 
-	
+	public List<HospModel> sortAsc(String pname) {
+		// TODO Auto-generated method stub
+		return hrepo.findAll(Sort.by(pname).ascending());
+	}
 
+	public List<HospModel> paginationAndSorting(int pgn, int pgs,String pname) {
+		// TODO Auto-generated method stub
+		Page<HospModel>p=hrepo.findAll(PageRequest.of(pgn,pgs,Sort.by(pname).descending()));
+				return p.getContent();
+	}
+
+	public List<HospModel> sortDesc(String pname) {
+		// TODO Auto-generated method stub
+		return hrepo.findAll(Sort.by(pname).descending());
+	}
+
+	public List<HospModel> paginationData(int pgn, int pgs) {
+		// TODO Auto-generated method stub
+		Page<HospModel>p=hrepo.findAll(PageRequest.of(pgn,pgs));
+		return p.getContent() ;
+	}
+
+	public String checklogin(String username, String password) {
+		// TODO Auto-generated method stub
+		HospModel user=hrepo.findByUsername(username);	
+		if(user==null)
+		{
+		return "No User Found";
+	    }
+		else
+		{
+			if(user.getPassword().equals(password))
+			{
+				return"Login Successfull";
+			}
+			else
+			{
+				return"login Failed";
+			}
+		}
+	}
 }
+	
+
+	
+
+
