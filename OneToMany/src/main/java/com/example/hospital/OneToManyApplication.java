@@ -9,20 +9,20 @@ import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
 @OpenAPIDefinition(
-		 info =@Info(
-		 title = "Hospital",
+		info =@Info(
+		 title = "One To Many",
 		 version = "1.1.2",
-		description = "Hospital Project",
+		 description = "One To Many Project",
 		 contact = @Contact(
 		 name = "Gayathri",
 		 email = "gayathri12@gmail.com"
 		 )
 		 )
-		)
-public class HospitalApplication {
+		 )
+public class OneToManyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HospitalApplication.class, args);
+		SpringApplication.run(OneToManyApplication.class, args);
 	}
 
 }

@@ -60,25 +60,8 @@ public class HospService {
 		return p.getContent() ;
 	}
 
-	public String checklogin(String username, String password) {
-		// TODO Auto-generated method stub
-		HospModel user=hrepo.findByUsername(username);	
-		if(user==null)
-		{
-		return "No User Found";
-	    }
-		else
-		{
-			if(user.getPassword().equals(password))
-			{
-				return"Login Successfull";
-			}
-			else
-			{
-				return"login Failed";
-			}
-		}
-	}
+	
+	
 }
 	
 
