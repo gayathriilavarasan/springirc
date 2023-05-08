@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.loan.Model.LoanApplicationModel;
 import com.example.loan.Model.UserModel;
 import com.example.loan.Service.LoanService;
+
+
 @RestController
 @RequestMapping("/user")
 public class LoanController {
